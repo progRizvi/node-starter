@@ -4,6 +4,7 @@ import bcrypt from "bcrypt";
 import prisma from "@config/db";
 import { generateVerificationToken } from "../utils/auth.util";
 import { log } from "@utils/logger";
+import { sendMail } from "@services/sendMailSerivice";
 
 interface RegisterBody {
 	name: string;
@@ -43,6 +44,7 @@ export const register = async (
 			},
 		});
 
+		// sending verification email
 		try {
 			sendMail(
 				lowerEmail,

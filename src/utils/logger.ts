@@ -16,6 +16,9 @@ export const log = {
 
 const writeLogToFile = (level: string, message: string) => {
 	const logPath = path.join(__dirname, "../loggers/node.log");
+	if (!fs.existsSync(path.dirname(logPath))) {
+		fs.mkdirSync(path.dirname(logPath), { recursive: true });
+	}
 	fs.appendFile(logPath, level + ": " + message + "\n", "utf-8", (err: any) => {
 		if (err) {
 			console.error(err);

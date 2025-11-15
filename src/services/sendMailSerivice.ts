@@ -1,4 +1,4 @@
-const sendMail = async (
+export const sendMail = async (
 	to: string,
 	subject: string,
 	body: string,
