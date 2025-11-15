@@ -4,7 +4,7 @@ import bcrypt from "bcrypt";
 import prisma from "@config/db";
 import { generateVerificationToken } from "../utils/auth.util";
 import { log } from "@utils/logger";
-import { sendMail } from "@services/sendMailSerivice";
+import { sendMails } from "@services/sendMailSerivice";
 
 interface RegisterBody {
 	name: string;
@@ -46,7 +46,7 @@ export const register = async (
 
 		// sending verification email
 		try {
-			sendMail(
+			sendMails(
 				lowerEmail,
 				"Verify your email",
 				`Please verify your email by clicking the link: ${process.env.FRONTEND_URL}/verify-email?token=${str}&email=${lowerEmail}`,
