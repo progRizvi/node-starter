@@ -6,6 +6,30 @@
     "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@controllers/*": [
+        "controllers/*"
+      ],
+      "@models/*": [
+        "models/*"
+      ],
+      "@utils/*": [
+        "utils/*"
+      ],
+      "@middlewares/*": [
+        "middlewares/*"
+      ],
+      "@config/*": [
+        "config/*"
+      ],
+      "@modules/*": [
+        "modules/*"
+      ],
+      "@exceptions/*": [
+        "exceptions/*"
+      ]
+    }
   }
 }
