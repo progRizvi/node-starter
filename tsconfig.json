@@ -9,6 +9,9 @@
     "skipLibCheck": true,
     "baseUrl": "./src",
     "paths": {
+      "@services/*": [
+        "services/*"
+      ],
       "@controllers/*": [
         "controllers/*"
       ],
