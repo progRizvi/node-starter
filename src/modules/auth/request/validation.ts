@@ -46,3 +46,22 @@ export const registerValidation = async (
 	}
 	return { valid: true };
 };
+
+export const loginValidation = (
+	email: string,
+	password: string
+): { valid: boolean; message?: string } => {
+	if (!email) {
+		return { valid: false, message: "Email is required" };
+	}
+	if (!emailValidation(email)) {
+		return { valid: false, message: "Email is invalid" };
+	}
+	if (!password) {
+		return { valid: false, message: "Password is required" };
+	}
+	if (!passwordValidation(password)) {
+		return { valid: false, message: "Password must be at least 6 characters" };
+	}
+	return { valid: true };
+};
